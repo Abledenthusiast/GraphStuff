@@ -6,6 +6,9 @@ class Graph:
             self.neighbors = []
             self.val = val
 
+        def get_neighbors(self):
+            return self.neighbors
+
     def __init__(self, nodes):
         self.nodes = dict(nodes)
 
@@ -14,6 +17,7 @@ class Graph:
 
     def get_node(self, val):
         return self.nodes.get(val, None)
+
 
     def depth_search(self, source, target):
         stack = []
@@ -25,7 +29,7 @@ class Graph:
             neighbors = current_node.get_neighbors()
             visited[current_node] = True
 
-            if source == target:
+            if current_node == target:
                 return True
 
             for node in neighbors:

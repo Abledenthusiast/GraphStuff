@@ -1,13 +1,10 @@
-
-class Node:
-    
-    def __init__(self, val):
-        self.neighbors = []
-        self.val = val
-
-
 class Graph:
 
+    class Node:
+    
+        def __init__(self, val):
+            self.neighbors = []
+            self.val = val
 
     def __init__(self, nodes):
         self.nodes = dict(nodes)
@@ -36,31 +33,27 @@ class Graph:
                     stack.append(node)
 
         return False
-
-
-
-
-class Node:
-
-    def __init__(self, val):
-        self.value = val
-        self.left_child = None
-        self.right_child = None
     
     
 class BST:
+    class Node:
+
+        def __init__(self, val):
+            self.value = val
+            self.left_child = None
+            self.right_child = None
     def __init__(self):
         self.root = None
 
     def insert(self, val):
         if self.root is None:
-            self.root = Node(val)
+            self.root = self.Node(val)
         else
             self.insert_util(val, self.root)
 
     def insert_util(self, val, current_node):
         if current_node is None:
-            return Node(val)
+            return self.Node(val)
         else:
             if current_node.value > val:
                 current_node.right_child = self.insert_util(val, current_node.right_child)

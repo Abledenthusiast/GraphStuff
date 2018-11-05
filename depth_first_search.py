@@ -16,6 +16,7 @@ class Graph:
     def add_node(self, val):
         node = self.Node(val)
         self.nodes[node.val] = node
+        self.size += 1
 
     def add_edge(self, u, v):
         u.neighbors.append(node2)

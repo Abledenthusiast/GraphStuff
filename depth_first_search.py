@@ -9,11 +9,17 @@ class Graph:
         def get_neighbors(self):
             return self.neighbors
 
-    def __init__(self, nodes):
-        self.nodes = dict(nodes)
+    def __init__(self):
+        self.nodes = dict()
+        self.size = 0
 
-    def add_node(self, node):
-        self.nodes[val] = node
+    def add_node(self, val):
+        node = self.Node(val)
+        self.nodes[node.val] = node
+
+    def add_edge(self, u, v):
+        u.neighbors.append(node2)
+        v.neighbors.append(node1)
 
     def get_node(self, val):
         return self.nodes.get(val, None)
